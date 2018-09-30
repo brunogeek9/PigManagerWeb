@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+<h:head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" type="text/css"
+		href="../resources/bibliotecas/bootstrap/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css"
+		href="../resources/bibliotecas/font-awesome/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css"
+		href="../resources/css/sb-admin.min.css" />
+
+</h:head>
+<h:body class="bg-dark">
+
+	<div class="container">
+		<div class="card card-login mx-auto mt-5">
+			<div class="card-header">Login</div>
+			<div class="card-body">
+				<h:form>
+					<div class="form-group">
+						<h:outputLabel value="Email" for="email" />
+						<h:inputText styleClass="form-control" id="email"
+							a:placeholder="Digite seu email" />
+					</div>
+					<div class="form-group">
+						<h:outputLabel value="Senha" for="senha" />
+						<h:inputSecret styleClass="form-control" id="senha"
+							a:placeholder="Digite seu senha" />
+					</div>
+					<div class="form-group">
+						<h:commandButton styleClass="btn btn-primary btn-block"
+							value="Entrar no sistema" />
+					</div>
+				</h:form>
+			</div>
+		</div>
+	</div>
+
+	<script src="../resources/bibliotecas/jquery/jquery.min.js"></script>
+	<script
+		src="../resources/bibliotecas/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script
+		src="../resources/bibliotecas/jquery-easing/jquery.easing.min.js"></script>
+
+
+</h:body>
+</html>

@@ -8,11 +8,57 @@
 
 	<ui:define name="conteudo">
 
-		<h:form id="form">
-			<p:panel header="Panel" style="margin:20px 0px">
-				
-				
+		<h:form id="form-cadastro-matriz">
+			<!-- 	<p:panel header="#{msgs.cadastro_matriz}"
+				styleClass="mt-4 panel panel-primary">
+				<div class="row form-group">
+
+					<div class="col-xl-2 col-lg-4 col-sm-5">
+						<p:outputLabel value="#{msgs.matriz_codigo}" for="codigo-matriz" />
+						<p:inputText id="codigo-matriz" styleClass="form-control" />
+					</div>
+					<div class="col-xl-5 col-lg-5 col-sm-7">
+						<p:outputLabel value="#{msgs.matriz_raca}" for="raca-matriz" />
+						<p:inputText id="raca-matriz" styleClass="form-control" />
+					</div>
+					<div class="col-xl-2 col-lg-3 col-sm-5">
+						<p:outputLabel value="#{msgs.matriz_peso}" for="peso-matriz" />
+						<p:inputMask id="peso-matriz" mask="999,99"
+							styleClass="form-control" />
+					</div>
+					<div class="col-xl-3 col-lg-4 col-sm-7">
+						<p:outputLabel value="#{msgs.matriz_data_nacimento}"
+							for="data-matriz" />
+						<p:inputMask id="data-matriz" mask="99/99/9999"
+							styleClass="form-control" />
+					</div>
+				</div>
+				<div class="row form-group">
+					<div class="col-xl-4 col-lg-4 col-sm-5">
+						<p:outputLabel value="#{msgs.matriz_estagio}" for="estagio-matriz" />
+						<p:inputText id="estagio-matriz" styleClass="form-control" />
+					</div>
+
+				</div>
+				<div class="col-xl-4 col-lg-5 col-sm-7">
+					<p:fileUpload id="historico-matriz"
+						label="#{msgs.matriz_add_arquivo}" mode="simple" skinSimple="true" />
+				</div>
 			</p:panel>
+		-->
+
+
+			<p:panelGrid columns="6"
+				layout="grid" styleClass="mt-4" columnClasses="col-md-1,col-md-2,col-md-1">
+				<p:outputLabel value="#{msgs.matriz_codigo}" for="codigo-matriz" />
+						<p:inputText id="codigo-matriz" styleClass="form-control" />
+						<p:outputLabel value="#{msgs.matriz_raca}" for="raca-matriz" />
+						<p:inputText id="raca-matriz" styleClass="form-control" />
+						<p:outputLabel value="#{msgs.matriz_peso}" for="peso-matriz" />
+						<p:inputMask id="peso-matriz" mask="999,99"
+							styleClass="form-control" />
+				
+			</p:panelGrid>
 		</h:form>
 	</ui:define>
 

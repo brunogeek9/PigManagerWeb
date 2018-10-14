@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	template="../../templates/template-cadastro-user.xhtml">
+
+	<ui:define name="conteudo">
+
+		<h:form id="form-cadastro-matriz">
+			<p:panel header="#{msgs.user_cadastro}"
+				styleClass="mt-4 panel panel-primary">
+
+				<div class="row form-group d-flex">
+					<div class="col-xl-4 col-lg-4 col-sm-12">
+						<p:outputLabel value="#{msgs.user_matricula}" for="matricula-user" />
+						<p:inputText id="matricula-user" styleClass="form-control" />
+					</div>
+					<div class="col-xl-6 col-lg-8 col-sm-12 ml-auto">
+						<p:outputLabel value="#{msgs.user_tipo}" for="tipo-user" />
+						<p:selectOneMenu id="tipo-user" value="#{selectOneMenuView.console}"
+							styleClass="form-control">
+							<f:selectItem itemLabel="Select One" itemValue="" />
+							<f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+							<f:selectItem itemLabel="PS4" itemValue="PS4" />
+							<f:selectItem itemLabel="Wii U" itemValue="Wii U" />
+						</p:selectOneMenu>
+					</div>
+				</div>
+				<div class="row form-group">
+					<div class="col-xl-6 col-lg-6 col-sm-12">
+						<p:outputLabel value="#{msgs.user_nome}" for="nome-user" />
+						<p:inputText id="nome-user" styleClass="form-control" />
+					</div>
+					<div class="col-xl-6 col-lg-6 col-sm-12">
+						<p:outputLabel value="#{msgs.user_email}" for="email-user" />
+						<p:inputText id="email-user" styleClass="form-control" />
+					</div>
+				</div>
+				<p:separator />
+				<div class="row d-flex ml-auto form-group">
+
+					<div class="form-group">
+						<p:commandButton value="Cancelar"
+							styleClass="btn mycss-btn-danger" />
+					</div>
+
+					<div class="form-group">
+						<p:commandButton value="Salvar" styleClass="btn mycss-btn-success" />
+					</div>
+
+				</div>
+
+			</p:panel>
+
+
+		</h:form>
+	</ui:define>
+
+</ui:decorate>

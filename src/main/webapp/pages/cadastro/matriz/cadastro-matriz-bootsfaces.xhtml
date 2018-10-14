@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	template="../../templates/template-bootsfaces.xhtml"
+	xmlns:b="http://bootsfaces.net/ui">
+
+	<ui:define name="conteudo">
+		<b:form id="form-cadastro-matriz">
+			<p:growl id="messages" showDetail="true" />
+			<b:panel title="#{msgs.cadastro_matriz}" collapsible="false"
+				look="primary" styleClass="panel-sem-borda">
+				<b:row>
+					<b:column col-md="2" styleClass="form-group">
+						<b:inputText label="#{msgs.matriz_codigo}" maxlength="7">
+
+						</b:inputText>
+					</b:column>
+					<b:column col-md="7" styleClass="form-group">
+						<b:inputText label="#{msgs.matriz_raca}" maxlength="7">
+
+						</b:inputText>
+					</b:column>
+					<b:column col-md="3" styleClass="form-group">
+						<b:datepicker mode="toggle-icon"
+							label="#{msgs.matriz_data_nacimento}" />
+					</b:column>
+				</b:row>
+				<b:row>
+					<b:column col-md="3">
+						<b:inputText label="#{msgs.matriz_estagio}">
+
+						</b:inputText>
+					</b:column>
+					<b:column col-md="3">
+						<b:inputText mask="999,999 Kg" label="#{msgs.matriz_peso}"
+							render-label="true" />
+					</b:column>
+					<b:column col-md="3" col-sm="12" offset-md="3">
+						<h:outputLabel value="#{msgs.matriz_add_arquivo}"
+							styleClass="control-label" for="arquivo-matriz" />
+						<h:inputFile label="testes" styleClass="upload" />
+					</b:column>
+				</b:row>
+				<p:separator />
+				<b:row>
+					<b:column span="1" styleClass="form-group">
+						<b:commandButton look="success " value="Salvar"
+							iconAwesome="check" iconAlign="right"  />
+					</b:column>
+					<b:column span="1" styleClass="form-group">
+						<b:commandButton look="danger" value="Cancelar"
+							iconAwesome="times" iconAlign="right" />
+					</b:column>
+				</b:row>
+
+			</b:panel>
+		</b:form>
+
+	</ui:define>
+
+</ui:decorate>

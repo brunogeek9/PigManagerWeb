@@ -7,8 +7,8 @@
 
 <h:head>
 	<!-- variavel para pegar o caminho root -->
-	<c:set var="path" value="#{request.contextPath}"/>
-	
+	<c:set var="path" value="#{request.contextPath}" />
+
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -20,7 +20,8 @@
 		href="${path}/resources/css/sb-admin.min.css" />
 	<link rel="stylesheet" type="text/css"
 		href="${path}/resources/css/teste-layout.css" />
-
+	<link rel="stylesheet" type="text/css"
+		href="${path}/resources/css/mycss.css" />
 </h:head>
 <h:body>
 
@@ -80,11 +81,11 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8">
-					<ui:insert name="conteudo">Conteudo</ui:insert>
+				<ui:insert name="conteudo">Conteudo</ui:insert>
 			</div>
 			<div class="card col-md-4">
 				<div class="card-body">
-				<h1>Notificações</h1>
+					<h1>Notificações</h1>
 					<ui:insert name="notificacoes">Notificacoes</ui:insert>
 				</div>
 			</div>

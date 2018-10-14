@@ -46,19 +46,62 @@
 				</div>
 			</p:panel>
 		-->
+			<p:panel header="#{msgs.cadastro_matriz}"
+				styleClass="mt-4 panel panel-primary">
 
-
-			<p:panelGrid columns="6"
-				layout="grid" styleClass="mt-4" columnClasses="col-md-1,col-md-2,col-md-1">
-				<p:outputLabel value="#{msgs.matriz_codigo}" for="codigo-matriz" />
-						<p:inputText id="codigo-matriz" styleClass="form-control" />
+				<div class="alinhar-centro row form-group">
+					<div class="col-xl-2 col-lg-2 col-sm-12">
+						<p:outputLabel value="#{msgs.matriz_codigo}" for="codigo-matriz" />
+						<p:inputText id="codigo-matriz" maxlength="5"
+							styleClass="form-control" />
+					</div>
+					<div class="col-xl-7 col-lg-6 col-sm-12">
 						<p:outputLabel value="#{msgs.matriz_raca}" for="raca-matriz" />
 						<p:inputText id="raca-matriz" styleClass="form-control" />
+					</div>
+					<div class="col-xl-3 col-lg-4 col-sm-12">
+						<p:outputLabel value="#{msgs.matriz_data_nacimento}"
+							for="data-matriz" />
+						<p:inputMask id="data-matriz" mask="99/99/9999"
+							styleClass="form-control" />
+					</div>
+				</div>
+				<div class="row d-flex form-group">
+					<div class="col-xl-2 col-lg-2 col-sm-12">
 						<p:outputLabel value="#{msgs.matriz_peso}" for="peso-matriz" />
 						<p:inputMask id="peso-matriz" mask="999,99"
 							styleClass="form-control" />
-				
-			</p:panelGrid>
+					</div>
+
+					<div class="col-xl-4 col-lg-4 col-sm-12">
+						<p:outputLabel value="#{msgs.matriz_estagio}" for="estagio-matriz" />
+						<p:inputText id="estagio-matriz" styleClass="form-control" />
+					</div>
+					<div class="col-xl-3 col-lg-4 col-sm-5 col-md-4 ml-auto">
+						<p:outputLabel value="#{msgs.matriz_add_arquivo}"
+							for="historico-matriz" />
+						<p:fileUpload id="historico-matriz" label="Procurar..."
+							mode="simple" skinSimple="true" />
+					</div>
+				</div>
+				<p:separator />
+				<div class="row d-flex ml-auto form-group">
+					
+					<div class="form-group">
+						<p:commandButton value="Cancelar"
+							styleClass="btn mycss-btn-danger" />
+					</div>
+					
+					<div class="form-group">
+						<p:commandButton value="Salvar"
+							styleClass="btn mycss-btn-success" />
+					</div>
+					
+				</div>
+
+			</p:panel>
+
+
 		</h:form>
 	</ui:define>
 

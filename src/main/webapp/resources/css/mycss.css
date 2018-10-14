@@ -1,0 +1,45 @@
+.alinhar-centro {
+	justify-content: center !important;
+}
+
+.input-file {
+	padding: 5px;
+}
+
+.mycss-btn-success {
+	border: 1px solid #469c53 !important;
+	color: #fff !important;
+	background: #469c53 !important;
+}
+
+.mycss-btn-success:hover {
+	border: 1px solid #3c8146 !important;
+	color: #fff !important;
+	background: #3c8146 !important;
+}
+
+.mycss-btn-success:active, .mycss-btn-success:focus {
+	border: 1px solid #25682f !important;
+	color: #fff !important;
+	background: #25682f !important;
+	box-shadow: 0 0 0 .2rem rgba(6, 255, 0, 0.3) !important;
+}
+
+.mycss-btn-danger {
+	border: 1px solid #e32336 !important;
+	color: #fff !important;
+	background: #e32336 !important;
+}
+
+.mycss-btn-danger:hover {
+	border: 1px solid #dc3545 !important;
+	color: #fff !important;
+	background: #dc3545 !important;
+}
+
+.mycss-btn-danger:active, .mycss-btn-danger:focus {
+	border: 1px solid #bd2130 !important;
+	color: #fff !important;
+	background: #bd2130 !important;
+	box-shadow: 0 0 0 .2rem rgba(255, 63, 0, 0.3) !important;
+}

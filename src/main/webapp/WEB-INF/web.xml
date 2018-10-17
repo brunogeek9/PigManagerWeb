@@ -14,7 +14,7 @@
 	</servlet-mapping>
 	<context-param>
 		<param-name>primefaces.THEME</param-name>
-		<param-value>omega</param-value>
+		<param-value>none</param-value>
 	</context-param>
 
 </web-app>

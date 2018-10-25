@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="pigJs">
+<head>
+	<meta charset="utf-8">
+	<title>Pig web version</title>
+	<script src="lib/angular/angular.js"></script>
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/bootstrap.css">
+	<style type="text/css">
+		.jumbotron{
+			width: 500px;
+			text-align: center;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 20px;
+		}
+		.form-control{
+			margin-bottom: 4px;
+		}
+		.in_id{
+			width: 100px;
+		}
+		.in_raca{
+			width: 300px;	
+		}
+	</style>
+	<script type="text/javascript">
+		angular.module("pigJs",[]);
+		angular.module("pigJs").controller("pigMatrizCtrl", function ($scope) {
+			$scope.app = "Pig web control";
+			$scope.txMatriz = "Gerencia de matrizes";
+			$scope.matrizes=[
+				{codigo:10, raca:"seila", peso:120, dataNasc:"19/02/2018"}
+			];
+			$scope.cadMatriz = function (matriz) {
+				$scope.matrizes.push(angular.copy(matriz));
+			};
+		});
+		 
+	</script>
+</head>
+<body>
+	<div ng-controller="pigMatrizCtrl">
+		<div class="jumbotron">
+			<h3>{{app}}</h3>
+			<hr/>
+			<h4>{{txMatriz}}</h4>
+			<hr/>
+			<!--  -->
+			<input class="form-control" type="text" ng-model="matriz.codigo" placeholder="codigo"/>
+			<input class="form-control" type="text" ng-model="matriz.raca" placeholder="Raça"/>
+			<input class="form-control" type="text" ng-model="matriz.peso" placeholder="Peso"/>
+			<input class="form-control" type="text" ng-model="matriz.dataNasc" placeholder="Data nascimento"/>
+			<button ng-click="cadMatriz(matriz)" class="btn btn-primary btn-block" ng-disabled="!matriz.codigo || !matriz.peso || !matriz.raca">Cadastrar Matriz</button>
+			{{matrizes}}
+		</div>
+	</div>
+</body>
+</html>

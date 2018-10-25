@@ -2,15 +2,19 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<!-- fontes de estilo -->
 	<link rel="stylesheet" type="text/css" href="../lib/bootstrap/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../lib/mycss/style-custom.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- fim -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<title></title>
+	<title>Cadastro Matriz</title>
 </head>
 <body>
 
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-blublu">
 		<div class="container">
 			<a href="#" class="navbar-brand mb-0">Administração</a>
 
@@ -62,6 +66,65 @@
 	</div>
 </div>
 </nav>
+
+<div class="container mt-3">
+	<div class="row">
+		<div class="col-md-8">
+			
+
+			<div class="card">
+				<div class="card-header">Cadastrar Matriz</div>
+				<div class="card-body">
+					<form>
+						<div class="row">
+							<div class="col-lg-3 col-md-6 form-group ">
+								<label for="codigo-matriz">Código</label>
+								<input type="text" class="form-control" id="codigo-matriz" placeholder="Digite o código">
+							</div>
+							<div class="col-lg-5 col-md-6 form-group ">
+								<label for="raca-matriz">Raça</label>
+								<input type="text" class="form-control" id="raca-matriz" placeholder="Digite a raça">
+							</div>
+							<div class="col-lg-4 col-md-12 form-group ">
+								<label for="data-matriz">Data Nascimento</label>
+								<input type="date" class="form-control" id="data-matriz" >
+							</div>
+
+						</div>
+						<div class="row">
+							<div class="col-lg-4 col-md-6 form-group">
+								<label for="estagio-matriz">Estágio</label>
+								<select id="estagio-matriz" class="form-control">
+									<option>Prenha</option>
+									<option>Grávida</option>
+									<option>Aleitamento</option>
+									<option>Descanso</option>
+								</select>
+							</div>
+							<div class="col-lg-3 col-md-6 form-group">
+								<label for="peso-matriz">Peso</label>
+								<input type="text" class="form-control" id="peso-matriz" placeholder="Digite o peso">
+							</div>
+							<div class="col-lg-5 col-md-12 form-group">
+								<label for="historico-matriz">Histórico</label>
+								<input type="file" class="form-control-file" id="historico-matriz">
+							</div>
+						</div>
+						<div class="dropdown-divider"></div>
+						<button type="submit" class="btn btn-success">Salvar</button>
+						<button type="submit" class="btn btn-danger">Cancelar</button>
+
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="card col-md-4">
+			<div class="card-body">
+				<h1>Notificações</h1>
+			</div>
+		</div>
+	</div>
+</div>
 
 <script src="../lib/jquery/dist/jquery.js"></script>
 <script src="../lib/popper/dist/popper.js"></script>

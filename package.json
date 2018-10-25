@@ -1,0 +1,27 @@
+{
+  "name": "pigmanagerweb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brunogeek9/PigManagerWeb.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brunogeek9/PigManagerWeb/issues"
+  },
+  "homepage": "https://github.com/brunogeek9/PigManagerWeb#readme",
+  "dependencies": {
+    "bootstrap": "^4.1.3",
+    "jquery": "^1.12.4",
+    "popper.js": "^1.14.4"
+  }
+}

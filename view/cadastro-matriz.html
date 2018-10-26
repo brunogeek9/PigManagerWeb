@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="pigJs">
 <head>
 	<meta charset="utf-8">
 	<!-- fontes de estilo -->
@@ -9,11 +9,14 @@
 	<!-- fim -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+	<!-- Adicionando o angular ao projeto -->
+	<script src="../lib/angular/angular.js"></script>
+	<!-- Adicionando  -->
+	<script src="../js/app.js"></script>
+	<script src="../js/controllers/pigMatrizCtrl.js"></script>
 	<title>Cadastro Matriz</title>
 </head>
 <body>
-
 	<nav class="navbar navbar-expand-lg navbar-dark bg-blublu">
 		<div class="container">
 			<a href="#" class="navbar-brand mb-0">Administração</a>
@@ -67,7 +70,7 @@
 </div>
 </nav>
 
-<div class="container mt-3">
+<div class="container mt-3" ng-controller="pigMatrizCtrl">
 	<div class="row">
 		<div class="col-md-8">
 			
@@ -79,15 +82,17 @@
 						<div class="row">
 							<div class="col-lg-3 col-md-6 form-group ">
 								<label for="codigo-matriz">Código</label>
-								<input type="text" class="form-control" id="codigo-matriz" placeholder="Digite o código">
+								<input type="text" class="form-control" id="codigo-matriz" placeholder="Digite o código" ng-model="matriz.codigo">
 							</div>
 							<div class="col-lg-5 col-md-6 form-group ">
 								<label for="raca-matriz">Raça</label>
-								<input type="text" class="form-control" id="raca-matriz" placeholder="Digite a raça">
+								<input type="text" class="form-control" id="raca-matriz" placeholder="Digite a raça"
+								ng-model="matriz.raca">
 							</div>
 							<div class="col-lg-4 col-md-12 form-group ">
 								<label for="data-matriz">Data Nascimento</label>
-								<input type="date" class="form-control" id="data-matriz" >
+								<input type="date" class="form-control" id="data-matriz" 
+								ng-model="matriz.dataNascimento">
 							</div>
 
 						</div>
@@ -100,10 +105,12 @@
 									<option>Aleitamento</option>
 									<option>Descanso</option>
 								</select>
+								{{estagios}}
 							</div>
 							<div class="col-lg-3 col-md-6 form-group">
 								<label for="peso-matriz">Peso</label>
-								<input type="text" class="form-control" id="peso-matriz" placeholder="Digite o peso">
+								<input type="text" class="form-control" id="peso-matriz" placeholder="Digite o peso"
+								ng-model="matriz.peso">
 							</div>
 							<div class="col-lg-5 col-md-12 form-group">
 								<label for="historico-matriz">Histórico</label>
@@ -111,9 +118,13 @@
 							</div>
 						</div>
 						<div class="dropdown-divider"></div>
-						<button type="submit" class="btn btn-success">Salvar</button>
-						<button type="submit" class="btn btn-danger">Cancelar</button>
-
+						<button ng-click="cadMatriz(matriz)" class="btn btn-success" ng-disabe>Salvar</button>
+						<button type="submit" class="btn btn-danger" ">Cancelar</button>
+						{{"Matriz atual da tela : "}}
+						{{matriz}}
+					
+						
+						{{matrizes}}
 					</form>
 				</div>
 			</div>

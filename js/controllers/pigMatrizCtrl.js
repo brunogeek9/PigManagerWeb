@@ -1,4 +1,4 @@
-angular.module("pigJs").controller("pigMatrizCtrl", function ($scope) {
+angular.module("pigJs").controller("pigMatrizCtrl", function ($scope,$http) {
 			$scope.app = "Pig web control";
 			$scope.txMatriz = "Gerencia de matrizes";
 			$scope.matrizes=[
@@ -12,5 +12,17 @@ angular.module("pigJs").controller("pigMatrizCtrl", function ($scope) {
 			];
 			$scope.cadMatriz = function (matriz) {
 				$scope.matrizes.push(angular.copy(matriz));
+			};
+
+			var carregarEstagios = function () {
+				$http.get("url").sucess(function (data,status) {
+					$scope.estagios = data;
+				});
+			};
+
+			var carregarMatrizes = function () {
+				$http.get("url").sucess(function (data,status) {
+					$scope.matrizes = data;
+				});
 			};
 		});

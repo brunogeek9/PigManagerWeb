@@ -99,11 +99,9 @@
 						<div class="row">
 							<div class="col-lg-4 col-md-6 form-group">
 								<label for="estagio-matriz">Estágio</label>
-								<select id="estagio-matriz" class="form-control">
-									<option>Prenha</option>
-									<option>Grávida</option>
-									<option>Aleitamento</option>
-									<option>Descanso</option>
+								<select id="estagio-matriz" class="form-control" ng-model="matriz.estagio"
+								ng-options="estagio.Estagio for estagio in estagios">
+									<option value="">Selecione um estagio</option>
 								</select>
 								{{estagios}}
 							</div>

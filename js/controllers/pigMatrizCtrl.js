@@ -12,6 +12,9 @@ angular.module("pigJs").controller("pigMatrizCtrl", function ($scope,$http) {
 			];
 			$scope.cadMatriz = function (matriz) {
 				$scope.matrizes.push(angular.copy(matriz));
+				$scope.matrizForm.$setPristine();
+				delete $scope.matriz;
+				
 			};
 
 			var carregarEstagios = function () {

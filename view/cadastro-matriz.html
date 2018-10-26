@@ -78,11 +78,11 @@
 			<div class="card">
 				<div class="card-header">Cadastrar Matriz</div>
 				<div class="card-body">
-					<form>
+					<form name="matrizForm">
 						<div class="row">
 							<div class="col-lg-3 col-md-6 form-group ">
 								<label for="codigo-matriz">Código</label>
-								<input type="text" class="form-control" id="codigo-matriz" placeholder="Digite o código" ng-model="matriz.codigo">
+								<input type="text" class="form-control" id="codigo-matriz" placeholder="Digite o código" ng-model="matriz.codigo" ng-required="true" name="codigo">
 							</div>
 							<div class="col-lg-5 col-md-6 form-group ">
 								<label for="raca-matriz">Raça</label>
@@ -116,13 +116,16 @@
 							</div>
 						</div>
 						<div class="dropdown-divider"></div>
-						<button ng-click="cadMatriz(matriz)" class="btn btn-success" ng-disabe>Salvar</button>
-						<button type="submit" class="btn btn-danger" ">Cancelar</button>
-						{{"Matriz atual da tela : "}}
-						{{matriz}}
-					
+						<div class="alert alert-danger" ng-show="matrizForm.codigo.$invalid && 
+						matrizForm.peso.$invalid && matrizForm.raca.$invalid && matrizForm.dataNascimento.$invalid && 
+						matrizForm.codigo.$dirty">
+							Por favor, preencha todos os campos
+						</div>
+						<button ng-click="cadMatriz(matriz)" class="btn btn-success"  ng-disabled="matrizForm.$invalid">
+							Salvar
+						</button>
+						<button type="submit" class="btn btn-danger">Cancelar</button>
 						
-						{{matrizes}}
 					</form>
 				</div>
 			</div>

@@ -11,64 +11,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<!-- Adicionando o angular ao projeto -->
 	<script src="../lib/angular/angular.js"></script>
-	<!-- Adicionando  -->
 	<script src="../js/app.js"></script>
 	<script src="../js/controllers/pigMatrizCtrl.js"></script>
 	<title>Cadastro Matriz</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-blublu">
-		<div class="container">
-			<a href="#" class="navbar-brand mb-0">Administração</a>
+<div ng-include="'menu.html'"></div>
 
-			<button class="navbar-toggler navbar-toggler-right" type="button"
-			data-toggle="collapse" data-target="#navbarAdm"
-			aria-control="navbarAdm" aria-expanded="false"
-			aria-label="Navegação Toggle">
-
-			<span class="navbar-toggler-icon"></span>
-		</button>
-
-		<div id="navbarAdm" class="collapse navbar-collapse">
-			<ul class="navbar-nav mr-auto">
-				<li class="nav-item">
-					<a class="nav-link" href="#"> Home </a>
-				</li>
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" data-toggle="dropdown"
-					id="gerenciaDrop" href="#"> Gerencia </a>
-					<div class="dropdown-menu">
-						<a class="dropdown-item" href="#"> Usuários </a>
-						<a class="dropdown-item" href="#"> Matrizes </a>
-
-					</div>
-				</li>
-			</ul>
-
-			<ul class="navbar-nav ml-auto">
-				<li class="nav-item dropdown">
-					<a class="nav-link text-center dropdown-toggle"
-					data-toggle="dropdown" id="userDrop" href="#">
-					<i class="fa fa-user"></i>
-					Adryel Julião
-				</a>
-				<div class="dropdown-menu">
-					<a class="dropdown-item" href="#">
-						<i class="fa fa-sign-out"></i>
-						Logout
-					</a>
-					<a class="dropdown-item" href="#">
-						<i class="fa fa-wrench"></i>
-						Configurações
-					</a>
-
-				</div>
-			</li>
-		</ul>
-
-	</div>
-</div>
-</nav>
 <div class="container mt-3" ng-controller="pigMatrizCtrl">
 	<div class="row">
 		<div class="col-md-8">
@@ -127,6 +76,7 @@
 						
 					</form>
 					{{matrizes}}
+					{{usuarios}}
 				</div>
 			</div>
 		</div>

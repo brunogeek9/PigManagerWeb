@@ -5,6 +5,7 @@ angular.module("pigJs").controller("pigMatrizCtrl", function ($scope,$http) {
 			//	{codigo:10, raca:"seila", peso:120, dataNasc:"19/02/2018"}
 			//];
 			$scope.matrizes = [];
+			$scope.usuarios = [];
 			$scope.estagios =[
 				{Estagio: "Prenha"},
 				{Estagio: "Grávida"},
@@ -29,5 +30,11 @@ angular.module("pigJs").controller("pigMatrizCtrl", function ($scope,$http) {
 					$scope.matrizes = response.data;
 				});
 			};
+			var carregaUsuarios = function () {
+				$http.get("http://localhost:8080/PigManager/usuario").then(function (response) {
+					$scope.usuarios = response.data;
+				});
+			};
 			carregarMatrizes();
+			carregaUsuarios();
 		});

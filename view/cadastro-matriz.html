@@ -5,7 +5,7 @@
 	<!-- fontes de estilo -->
 	<link rel="stylesheet" type="text/css" href="../lib/bootstrap/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../lib/mycss/style-custom.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
 	<!-- fim -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -30,7 +30,7 @@
 						<div class="row">
 							<div class="col-lg-3 col-md-6 form-group ">
 								<label for="codigo-matriz">Código</label>
-								<input type="text" class="form-control" id="codigo-matriz" placeholder="Digite o código" ng-model="matriz.codigo" ng-required="true" name="codigo">
+								<input type="text" class="form-control" id="codigo-matriz" placeholder="Digite o código" ng-model="matriz.identificador" ng-required="true" name="codigo">
 							</div>
 							<div class="col-lg-5 col-md-6 form-group ">
 								<label for="raca-matriz">Raça</label>
@@ -48,10 +48,9 @@
 							<div class="col-lg-4 col-md-6 form-group">
 								<label for="estagio-matriz">Estágio</label>
 								<select id="estagio-matriz" class="form-control" ng-model="matriz.estagio"
-								ng-options="estagio.Estagio for estagio in estagios">
-									<option value="">Selecione um estagio</option>
+								ng-options="estagio for estagio in estagios" >
+									<option value="">Selecione um estagio</option>									
 								</select>
-								{{estagios}}
 							</div>
 							<div class="col-lg-3 col-md-6 form-group">
 								<label for="peso-matriz">Peso</label>
@@ -60,7 +59,7 @@
 							</div>
 							<div class="col-lg-5 col-md-12 form-group">
 								<label for="historico-matriz">Histórico</label>
-								<input type="file" class="form-control-file" id="historico-matriz">
+								<input type="file" class="form-control-file" id="historico-matriz" ng-model="matriz.arquivo">
 							</div>
 						</div>
 						<div class="dropdown-divider"></div>
@@ -75,8 +74,9 @@
 						<button type="submit" class="btn btn-danger">Cancelar</button>
 						
 					</form>
+					{{matriz}}
+					<br>
 					{{matrizes}}
-					{{usuarios}}
 				</div>
 			</div>
 		</div>

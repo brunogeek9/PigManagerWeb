@@ -12,12 +12,12 @@
 	<!-- Adicionando o angular ao projeto -->
 	<script src="../lib/angular/angular.js"></script>
 	<script src="../js/app.js"></script>
-	<script src="../js/controllers/pigMatrizCtrl.js"></script>
+	<script src="../js/controllers/pigUsuarioCtrl.js"></script>
 	<title>Cadastro Usuario</title>
 </head>
 <body>
 <div ng-include="'menu.html'"></div>
-<div class="container mt-3">
+<div class="container mt-3" ng-controller="pigUsuarioCtrl">
 	<div class="row">
 		<div class="col-md-8">
 			
@@ -29,19 +29,21 @@
 						<div class="row">
 							<div class="col-lg-9 col-md-10 form-group ">
 								<label for="nome-usuario">Nome</label>
-								<input type="text" required="true" class="form-control" id="nome" placeholder="Nome">
+								<input type="text" required="true" class="form-control" id="nome" placeholder="Nome"
+								ng-model="usuario.nome">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-lg-9 col-md-10 form-group">
 								<label for="email-usuario">Email</label>
-								<input type="text" required="true" pattern="" class="form-control" id="email" placeholder="Digite seu email">
+								<input type="text" required="true" pattern="" class="form-control" id="email" placeholder="Digite seu email" ng-model="usuario.email">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-lg-4 col-md-2 form-group">
 							<label for="password-usuario">Senha</label>
-							<input type="password" required="true" class="form-control" id="password" placeholder="Senha">
+							<input type="password" required="true" class="form-control" id="password" placeholder="Senha"
+							ng-model="usuario.senha">
 							</div>
 
 
@@ -52,15 +54,17 @@
 
 						</div>
 						<div class="dropdown-divider"></div>
-						<button type="submit" class="btn btn-success">Salvar</button>
+						<button class="btn btn-success" ng-click="cadUsuario(usuario)">Salvar</button>
 						<button type="submit" class="btn btn-danger">Cancelar</button>
 					</form>
 				</div>
 			</div>
 		</div>
+		{{usuario}}
 		<div class="card col-md-4">
 			<div class="card-body">
 				<h1>Notificações</h1>
+				{{usuarios}}
 			</div>
 		</div>
 	</div>

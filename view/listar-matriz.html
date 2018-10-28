@@ -1,0 +1,146 @@
+<!DOCTYPE >
+<html ng-app="listarMatriz">
+<head>
+	<title></title>
+
+	<meta charset="utf-8">
+	<!-- fontes de estilo -->
+	<link rel="stylesheet" type="text/css" href="../lib/bootstrap/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../lib/mycss/style-custom.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- fim das fontes de estilo -->
+	<!--fontes java script-->
+	<script src="../lib/jquery/dist/jquery.js"></script>
+	<script src="../lib/popper/dist/popper.js"></script>
+	<script src="../lib/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="../lib/angular/angular.js"></script>
+
+	<!--fim fontes java script-->
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!--teste só para prototipo-->
+	
+	<script type="text/javascript">
+		angular.module("listarMatriz",[]);
+		angular.module("listarMatriz").controller("listarMatrizCtl",function($scope){
+			$scope.matrizes = [
+			{codigo: "11111",raca:"Landrace"},
+			{codigo: "22222",raca:"Large White"},
+			{codigo: "33333",raca:"Duroc"},
+			{codigo: "44444",raca:"Pietrain"},
+			];
+		});
+	</script>
+</head>
+
+<body ng-controller="listarMatrizCtl">
+	<!--navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-blublu">
+		<div class="container">
+			<a href="#" class="navbar-brand mb-0">Administração</a>
+
+			<button class="navbar-toggler navbar-toggler-right" type="button"
+			data-toggle="collapse" data-target="#navbarAdm"
+			aria-control="navbarAdm" aria-expanded="false"
+			aria-label="Navegação Toggle">
+
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div id="navbarAdm" class="collapse navbar-collapse">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="#"> Home </a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-toggle="dropdown"
+					id="gerenciaDrop" href="#"> Gerencia </a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="#"> Usuários </a>
+						<a class="dropdown-item" href="#"> Matrizes </a>
+
+					</div>
+				</li>
+			</ul>
+
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item dropdown">
+					<a class="nav-link text-center dropdown-toggle"
+					data-toggle="dropdown" id="userDrop" href="#">
+					<i class="fa fa-user"></i>
+					Adryel Julião
+				</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="#">
+						<i class="fa fa-sign-out"></i>
+						Logout
+					</a>
+					<a class="dropdown-item" href="#">
+						<i class="fa fa-wrench"></i>
+						Configurações
+					</a>
+
+				</div>
+			</li>
+		</ul>
+
+	</div>
+</div>
+</nav>
+<!--fim da navbar-->
+
+
+<div class="container-fluid mt-5">
+	<div class="row">
+		<div class="col-lg-1"></div>
+		<div class="container col-lg-7">
+			<div class="card-header" align="center"><h3>Lista de Matrizes<h3></div>
+			<div class="table-wrapper-scroll-y">
+				<table id="tabela" class="table table-hover" ng-app="matriz in matrizes">
+					<thead class="thead">
+						<tr>
+							<th>Código</th>
+							<th>Raça</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="matriz in matrizes">
+							<div class="row">
+								<td>
+									<a class="nav-link text-dark" href="#">{{matriz.codigo}}</a>
+								</td>
+								<td class="col">
+									<a class="nav-link text-dark" href="#">{{matriz.raca}}</a>
+								</td>
+								<td>
+									<button class=" btn btn-primary">
+										<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+										Editar
+									</button>
+								</td>
+								<td>
+									<button class="btn btn-danger">
+										<i class="fa fa-trash-o" aria-hidden="true"></i>
+										Excluir
+									</button>
+								</td>
+							</div>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="container col-lg-4">
+			<div class="card">
+			<div class="card-body">
+				<h1>Notificações</h1>
+			</div>
+		</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

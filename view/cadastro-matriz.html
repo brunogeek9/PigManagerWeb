@@ -5,7 +5,7 @@
 	<!-- fontes de estilo -->
 	<link rel="stylesheet" type="text/css" href="../lib/bootstrap/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../lib/mycss/style-custom.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!-- fim -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,8 +21,6 @@
 <div class="container mt-3" ng-controller="pigMatrizCtrl">
 	<div class="row">
 		<div class="col-md-8">
-			
-
 			<div class="card">
 				<div class="card-header">Cadastrar Matriz</div>
 				<div class="card-body">
@@ -39,7 +37,7 @@
 							</div>
 							<div class="col-lg-4 col-md-12 form-group ">
 								<label for="data-matriz">Data Nascimento</label>
-								<input type="date" class="form-control" id="data-matriz" 
+								<input type="date" class="form-control" id="data-matriz"
 								ng-model="matriz.dataNascimento">
 							</div>
 
@@ -49,7 +47,7 @@
 								<label for="estagio-matriz">Estágio</label>
 								<select id="estagio-matriz" class="form-control" ng-model="matriz.estagio"
 								ng-options="estagio for estagio in estagios" >
-									<option value="">Selecione um estagio</option>									
+									<option value="">Selecione um estagio</option>
 								</select>
 							</div>
 							<div class="col-lg-3 col-md-6 form-group">
@@ -63,8 +61,8 @@
 							</div>
 						</div>
 						<div class="dropdown-divider"></div>
-						<div class="alert alert-danger" ng-show="matrizForm.codigo.$invalid && 
-						matrizForm.peso.$invalid && matrizForm.raca.$invalid && matrizForm.dataNascimento.$invalid && 
+						<div class="alert alert-danger" ng-show="matrizForm.codigo.$invalid &&
+						matrizForm.peso.$invalid && matrizForm.raca.$invalid && matrizForm.dataNascimento.$invalid &&
 						matrizForm.codigo.$dirty">
 							Por favor, preencha todos os campos
 						</div>
@@ -72,7 +70,7 @@
 							Salvar
 						</button>
 						<button type="submit" class="btn btn-danger">Cancelar</button>
-						
+
 					</form>
 					{{matriz}}
 					<br>
@@ -80,9 +78,11 @@
 				</div>
 			</div>
 		</div>
-		<div class="card col-md-4">
-			<div class="card-body">
-				<h1>Notificações</h1>
+		<div class="col-md-4">
+			<div class="card">
+				<div class="card-body">
+					<h1>Notificações</h1>
+				</div>
 			</div>
 		</div>
 	</div>

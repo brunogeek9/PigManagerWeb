@@ -2,57 +2,74 @@
 <html ng-app="pigJs">
 <head>
 	<meta charset="utf-8">
-	<title>Pig web version</title>
-	<script src="lib/angular/angular.js"></script>
-	<link rel="stylesheet" type="text/css" href="lib/bootstrap/bootstrap.css">
-	<style type="text/css">
-		.jumbotron{
-			width: 500px;
-			text-align: center;
-			margin-left: auto;
-			margin-right: auto;
-			margin-top: 20px;
-		}
-		.form-control{
-			margin-bottom: 4px;
-		}
-		.in_id{
-			width: 100px;
-		}
-		.in_raca{
-			width: 300px;	
-		}
-	</style>
-	<script type="text/javascript">
-		angular.module("pigJs",[]);
-		angular.module("pigJs").controller("pigMatrizCtrl", function ($scope) {
-			$scope.app = "Pig web control";
-			$scope.txMatriz = "Gerencia de matrizes";
-			$scope.matrizes=[
-				{codigo:10, raca:"seila", peso:120, dataNasc:"19/02/2018"}
-			];
-			$scope.cadMatriz = function (matriz) {
-				$scope.matrizes.push(angular.copy(matriz));
-			};
-		});
-		 
-	</script>
+	<!-- fontes de estilo -->
+	<link rel="stylesheet" type="text/css" href="../lib/bootstrap/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../lib/mycss/style-custom.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- fim das fontes de estilo -->
+	<!--fontes java script-->
+	<script src="../lib/jquery/dist/jquery.js"></script>
+	<script src="../lib/popper/dist/popper.js"></script>
+	<script src="../lib/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="../lib/angular/angular.js"></script>
+	<script src="../js/app.js"></script>
+	<script src="../js/controllers/pigUsuarioCtrl.js"></script>
+	<title>Home</title>
 </head>
-<body>
-	<div ng-controller="pigMatrizCtrl">
-		<div class="jumbotron">
-			<h3>{{app}}</h3>
-			<hr/>
-			<h4>{{txMatriz}}</h4>
-			<hr/>
-			<!--  -->
-			<input class="form-control" type="text" ng-model="matriz.codigo" placeholder="codigo"/>
-			<input class="form-control" type="text" ng-model="matriz.raca" placeholder="Raça"/>
-			<input class="form-control" type="text" ng-model="matriz.peso" placeholder="Peso"/>
-			<input class="form-control" type="text" ng-model="matriz.dataNasc" placeholder="Data nascimento"/>
-			<button ng-click="cadMatriz(matriz)" class="btn btn-primary btn-block" ng-disabled="!matriz.codigo || !matriz.peso || !matriz.raca">Cadastrar Matriz</button>
-			{{matrizes}}
-		</div>
+<body ng-controller="pigUsuarioCtrl">
+		
+	<nav class="navbar navbar-expand-lg navbar-dark bg-blublu">
+		<div class="container">
+			<a href="#" class="navbar-brand mb-0">Administração</a>
+
+			<button class="navbar-toggler navbar-toggler-right" type="button"
+			data-toggle="collapse" data-target="#navbarAdm"
+			aria-control="navbarAdm" aria-expanded="false"
+			aria-label="Navegação Toggle">
+
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div id="navbarAdm" class="collapse navbar-collapse">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="index.html"> Home </a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-toggle="dropdown"
+					id="gerenciaDrop" href="#"> Gerencia </a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="view/listar-usuario.html"> Usuários </a>
+						<a class="dropdown-item" href="view/listar-matriz.html"> Matrizes </a>
+
+					</div>
+				</li>
+			</ul>
+
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item dropdown">
+					<a class="nav-link text-center dropdown-toggle"
+					data-toggle="dropdown" id="userDrop" href="#">
+					<i class="fa fa-user"></i>
+					Adryel Julião
+				</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="#">
+						<i class="fa fa-sign-out"></i>
+						Logout
+					</a>
+					<a class="dropdown-item" href="#">
+						<i class="fa fa-wrench"></i>
+						Configurações
+					</a>
+
+				</div>
+			</li>
+		</ul>
+
 	</div>
+</div>
+</nav>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<!DOCTYPE >
+<!DOCTYPE html>
 <html ng-app="listarMatriz">
 <head>
 	<title></title>
@@ -25,72 +25,19 @@
 	
 	<script type="text/javascript">
 		angular.module("listarMatriz",[]);
-		angular.module("listarMatriz").controller("listarMatrizCtl",function($scope){
-			$scope.matrizes = [
-			{codigo: "11111",raca:"Landrace"},
-			{codigo: "22222",raca:"Large White"},
-			{codigo: "33333",raca:"Duroc"},
-			{codigo: "44444",raca:"Pietrain"},
-			];
+		angular.module("listarMatriz").controller("listarMatrizCtl",function($scope,$http){
+			$http.get("http://localhost:8080/PigManager/matriz").then(function (response) {
+					$scope.matrizes = response.data;
+				});
 		});
 	</script>
 </head>
 
 <body ng-controller="listarMatrizCtl">
+	<div ng-include="'menu.html'"></div>
 	<!--navbar-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-blublu">
-		<div class="container">
-			<a href="#" class="navbar-brand mb-0">Administração</a>
 
-			<button class="navbar-toggler navbar-toggler-right" type="button"
-			data-toggle="collapse" data-target="#navbarAdm"
-			aria-control="navbarAdm" aria-expanded="false"
-			aria-label="Navegação Toggle">
-
-			<span class="navbar-toggler-icon"></span>
-		</button>
-
-		<div id="navbarAdm" class="collapse navbar-collapse">
-			<ul class="navbar-nav mr-auto">
-				<li class="nav-item">
-					<a class="nav-link" href="#"> Home </a>
-				</li>
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" data-toggle="dropdown"
-					id="gerenciaDrop" href="#"> Gerencia </a>
-					<div class="dropdown-menu">
-						<a class="dropdown-item" href="#"> Usuários </a>
-						<a class="dropdown-item" href="#"> Matrizes </a>
-
-					</div>
-				</li>
-			</ul>
-
-			<ul class="navbar-nav ml-auto">
-				<li class="nav-item dropdown">
-					<a class="nav-link text-center dropdown-toggle"
-					data-toggle="dropdown" id="userDrop" href="#">
-					<i class="fa fa-user"></i>
-					Adryel Julião
-				</a>
-				<div class="dropdown-menu">
-					<a class="dropdown-item" href="#">
-						<i class="fa fa-sign-out"></i>
-						Logout
-					</a>
-					<a class="dropdown-item" href="#">
-						<i class="fa fa-wrench"></i>
-						Configurações
-					</a>
-
-				</div>
-			</li>
-		</ul>
-
-	</div>
-</div>
-</nav>
-<!--fim da navbar-->
+	<!--fim da navbar-->
 
 
 <div class="container-fluid mt-5">
@@ -110,7 +57,7 @@
 						<tr ng-repeat="matriz in matrizes">
 							<div class="row">
 								<td>
-									<a class="nav-link text-dark" href="#">{{matriz.codigo}}</a>
+									<a class="nav-link text-dark" href="#">{{matriz.identificador}}</a>
 								</td>
 								<td class="col">
 									<a class="nav-link text-dark" href="#">{{matriz.raca}}</a>
@@ -131,6 +78,17 @@
 						</tr>
 					</tbody>
 				</table>
+				<!--
+				<button class=" btn btn-success btn-lg btn-block">
+					<i class="fa fa fa-floppy-o" aria-hidden="true"></i>
+					Cadastrar Nova
+						
+				
+				</button>
+				-->
+				<a class="btn btn-secondary btn-lg btn-block" href="cadastro-matriz.html">
+				<i class="fa fa fa-floppy-o" aria-hidden="true"></i>
+				Cadastrar Nova</a>
 			</div>
 		</div>
 		<div class="container col-lg-4">

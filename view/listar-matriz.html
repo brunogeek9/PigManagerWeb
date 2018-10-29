@@ -1,4 +1,4 @@
-<!DOCTYPE >
+<!DOCTYPE html>
 <html ng-app="listarMatriz">
 <head>
 	<title></title>
@@ -24,76 +24,71 @@
 	<!--teste só para prototipo-->
 
 	<script type="text/javascript">
-		angular.module("listarMatriz",[]);
-		angular.module("listarMatriz").controller("listarMatrizCtl",function($scope){
-			$scope.matrizes = [
-			{codigo: "11111",raca:"Landrace",peso:"111.11",dataNascimento:"01/01/2011"},
-			{codigo: "22222",raca:"Large White",peso:"222.22",dataNascimento:"02/02/2012"},
-			{codigo: "33333",raca:"Duroc",peso:"333.33",dataNascimento:"03/03/2013"},
-			{codigo: "44444",raca:"Pietrain",peso:"444.44",dataNascimento:"04/04/2014"},
-			];
-		});
-	</script>
+			angular.module("listarMatriz",[]);
+			angular.module("listarMatriz").controller("listarMatrizCtl",function($scope,$http){
+				$http.get("http://localhost:8080/PigManager/matriz").then(function (response) {
+						$scope.matrizes = response.data;
+					});
+			});
+		</script>
 </head>
 
 <body ng-controller="listarMatrizCtl">
 	<!--navbar-->
 	<div ng-include="'menu.html'"></div>
 	<!--fim da navbar-->
+		<div class="container mt-3">
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="card">
+						<div class="card-header"><h5>Lista de Matrizes<h5></div>
+							<div class="card-body">
+								<div class="table-responsive">
+									<table id="tabela" class="table table-hover table-bordered" ng-app="matriz in matrizes">
+									  <thead class="text-center">
+									    <tr>
+									      <th scope="col">Código</th>
+									      <th scope="col">Raça</th>
+									      <th scope="col">Peso</th>
+												<th scope="col">Data Nascimento</th>
+												<th scope="col">Editar</th>
+												<th scope="col">Excluir</th>
+									    </tr>
+									  </thead>
+									  <tbody class="text-center">
+									    <tr ng-repeat="matriz in matrizes">
+									      <th scope="row" class="col-md-1">
+													{{matriz.codigo}}
+												</th>
+									      <td class="">{{matriz.raca}}</td>
+									      <td class="">{{matriz.peso}}</td>
+												<td class="">{{matriz.dataNascimento}}</td>
+									      <td class="">
+													<button class="btn btn-primary">
+								            <i class="fa fa-pencil" aria-hidden="true"></i>
+								          </button>
+												</td>
+												<td class="col-md-1">
+													<button class="btn btn-danger">
+								            <i class="fa fa-trash-o" aria-hidden="true"></i>
+								          </button>
+												</td>
+									    </tr>
 
-
-	<div class="container mt-3">
-		<div class="row">
-			<div class="col-lg-8">
-				<div class="card">
-					<div class="card-header"><h5>Lista de Matrizes<h5></div>
-						<div class="card-body">
-							<div class="table-responsive">
-								<table class="table table-hover table-bordered" ng-app="matriz in matrizes">
-								  <thead class="text-center">
-								    <tr>
-								      <th scope="col">Código</th>
-								      <th scope="col">Raça</th>
-								      <th scope="col">Peso</th>
-											<th scope="col">Data Nascimento</th>
-											<th scope="col">Editar</th>
-											<th scope="col">Excluir</th>
-								    </tr>
-								  </thead>
-								  <tbody class="text-center">
-								    <tr ng-repeat="matriz in matrizes">
-								      <th scope="row" class="col-md-1">
-												{{matriz.codigo}}
-											</th>
-								      <td class="">{{matriz.raca}}</td>
-								      <td class="">{{matriz.peso}}</td>
-											<td class="">{{matriz.dataNascimento}}</td>
-								      <td class="">
-												<button class="btn btn-primary">
-							            <i class="fa fa-pencil" aria-hidden="true"></i>
-							          </button>
-											</td>
-											<td class="col-md-1">
-												<button class="btn btn-danger">
-							            <i class="fa fa-trash-o" aria-hidden="true"></i>
-							          </button>
-											</td>
-								    </tr>
-
-								  </tbody>
-								</table>
+									  </tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+				</div>
+					<div class="col-md-4">
+						<div class="card">
+							<div class="card-body">
+								<h1>Notificações</h1>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="card">
-						<div class="card-body">
-							<h1>Notificações</h1>
-						</div>
-					</div>
-				</div>
 			</div>
-		</div>
+		</div>		
 	</body>
 </html>

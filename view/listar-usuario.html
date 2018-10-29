@@ -1,4 +1,4 @@
-<!DOCTYPE >
+<!DOCTYPE html>
 <html ng-app="listarUsuario">
 <head>
 	<title></title>
@@ -25,72 +25,18 @@
 	
 	<script type="text/javascript">
 		angular.module("listarUsuario",[]);
-		angular.module("listarUsuario").controller("listarUsuarioCtl",function($scope){
-			$scope.usuarios = [
-			{nome: "Joao teste"},
-			{nome: "Maria teste"},
-			{nome: "Pedro teste"},
-			{nome: "Gabriel alves henrique da Silva Nunes"},
-			];
+		angular.module("listarUsuario").controller("listarUsuarioCtl",function($scope,$http){
+			$http.get("http://localhost:8080/PigManager/usuario").then(function (response) {
+				$scope.usuarios = response.data;
+			});
 		});
 	</script>
 </head>
 
 <body ng-controller="listarUsuarioCtl">
+	<div ng-include="'menu.html'"></div>
 	<!--navbar-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-blublu">
-		<div class="container">
-			<a href="#" class="navbar-brand mb-0">Administração</a>
-
-			<button class="navbar-toggler navbar-toggler-right" type="button"
-			data-toggle="collapse" data-target="#navbarAdm"
-			aria-control="navbarAdm" aria-expanded="false"
-			aria-label="Navegação Toggle">
-
-			<span class="navbar-toggler-icon"></span>
-		</button>
-
-		<div id="navbarAdm" class="collapse navbar-collapse">
-			<ul class="navbar-nav mr-auto">
-				<li class="nav-item">
-					<a class="nav-link" href="#"> Home </a>
-				</li>
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" data-toggle="dropdown"
-					id="gerenciaDrop" href="#"> Gerencia </a>
-					<div class="dropdown-menu">
-						<a class="dropdown-item" href="#"> Usuários </a>
-						<a class="dropdown-item" href="#"> Matrizes </a>
-
-					</div>
-				</li>
-			</ul>
-
-			<ul class="navbar-nav ml-auto">
-				<li class="nav-item dropdown">
-					<a class="nav-link text-center dropdown-toggle"
-					data-toggle="dropdown" id="userDrop" href="#">
-					<i class="fa fa-user"></i>
-					Adryel Julião
-				</a>
-				<div class="dropdown-menu">
-					<a class="dropdown-item" href="#">
-						<i class="fa fa-sign-out"></i>
-						Logout
-					</a>
-					<a class="dropdown-item" href="#">
-						<i class="fa fa-wrench"></i>
-						Configurações
-					</a>
-
-				</div>
-			</li>
-		</ul>
-
-	</div>
-</div>
-</nav>
-<!--fim da navbar-->
+	<!--fim da navbar-->
 
 
 <div class="container-fluid mt-5">
@@ -129,6 +75,9 @@
 						</tr>
 					</tbody>
 				</table>
+				<a class="btn btn-secondary btn-lg btn-block" href="cadastro-usuario.html">
+				<i class="fa fa fa-floppy-o" aria-hidden="true"></i>
+				Cadastrar Novo</a>
 			</div>
 		</div>
 		<div class="container col-sm-12 col-lg-4">

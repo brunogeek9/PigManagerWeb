@@ -3,7 +3,7 @@ O projeto consiste em um sistema web para gerencia de porcos.
 
 ## Configuração do ambiente de desenvolvimento
 1. Para testar o projeto, primeiro instale o netbeans.<br/>
-![alt text](https://netbeans.org/images_www/v7/design/logo_netbeans_red.png)<br/>
+![alt text](https://sempreupdate.com.br/wp-content/uploads/2017/10/capa.jpg)<br/>
 https://netbeans.org/downloads/
 2. Depois, clone o projeto do webService <br/>
 https://github.com/brunogeek9/PigManagerService <br/>

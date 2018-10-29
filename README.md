@@ -18,9 +18,9 @@ https://nodejs.org/en/<br/>
 https://www.npmjs.com/package/http-server <br/>
 2. Para rodar o projeto, abra a sua pasta com os códigos pelo terminal, e depois com a pasta aberta basta rodar o comando a seguir.
 <br/>
-2.1 Comando para abrir a pasta em um teste hipotetico.
-Supondo que o projeto esta na pasta documentos do windows.
-cd documents\pigmanaerweb
+2.1 Comando para abrir a pasta em um teste hipotetico.<br/>
+Supondo que o projeto esta na pasta documentos do windows.<br/>
+cd documents\pigmanaerweb<br/>
 2.2 Depois basta iniciar o servidor, no tutorial antes mencionado isso esta mais detalhado, mas um comando básico para rodar o server seria algo tipo <br/>
-http-server -p 12 -o firefox
+http-server -p 12 -o firefox<br/>
 2.3 obs: o -p significa a porta na qual o servidor vai rodar, optei a 12 por ela estar disponivel e o -o é qual o navegador o servidor vai abrir automaticamente rodando o seu projeto.

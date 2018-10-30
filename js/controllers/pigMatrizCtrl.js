@@ -6,26 +6,26 @@ angular.module("pigJs").controller("pigMatrizCtrl", function ($scope,$http) {
 			//];
 			$scope.matrizes = [];
 			
-			$scope.estagios = ['Grávida', 'Prenha', 'Aleitamento', 'Descanso'];
+			$scope.estagios = ['Coberta', 'Prenhes', 'Lactação', 'Vazia'];
 			
 			$scope.cadMatriz = function (matriz) {
-				matriz.arquivo = "foto";
+				/*matriz.arquivo = "foto";
 				matriz.dataNascimento = '2018-01-01';
 				matriz.identificador = "2222";
 				matriz.raca = "essa fera";
 				matriz.peso = 150;
-				matriz.estagio = "GRAVIDA";
+				matriz.estagio = "GRAVIDA";*/
 				
 				$scope.matrizes.push(angular.copy(matriz));
 				$scope.matrizForm.$setPristine();
+				
 				console.log(matriz);
-				//delete $scope.matriz;
-				//$http.post("http://localhost:8080/PigManager/matriz",matriz);
+				
 				$http({
 			        url: "http://localhost:8080/PigManager/matriz",
 			        method: "POST",
 			        headers: {'Access-Control-Allow-Origin': '*'},
-			        data: { 'matriz' : matriz }
+			        data: matriz 
 			    })
 			    .then(function(response) {
 			        console.log(response.data);

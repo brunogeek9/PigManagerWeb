@@ -45,12 +45,18 @@
 		<div class="container col-lg-7">
 			<div class="card-header" align="center"><h3>Lista de Usuários<h3></div>
 			<div class="table-wrapper-scroll-y">
+
 				<table id="tabela" class="table table-hover" ng-app="usuario in usuarios">
+					<div class="row">
+				<a class="btn btn-secondary ml-auto" href="cadastro-usuario.html">
+				<i class="fa fa fa-floppy-o" aria-hidden="true"></i>
+				Cadastrar Novo</a>
+				</div>
 					<thead class="thead">
 						<tr>
 							<th>Nome</th>
-							<th></th>
-							<th></th>
+							<th>Editar</th>
+							<th>Excluir</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -62,22 +68,18 @@
 								<td>
 									<button class=" btn btn-primary">
 										<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-										Editar
 									</button>
 								</td>
 								<td>
 									<button class="btn btn-danger">
 										<i class="fa fa-trash-o" aria-hidden="true"></i>
-										Excluir
 									</button>
 								</td>
 							</div>
 						</tr>
 					</tbody>
 				</table>
-				<a class="btn btn-secondary btn-lg btn-block" href="cadastro-usuario.html">
-				<i class="fa fa fa-floppy-o" aria-hidden="true"></i>
-				Cadastrar Novo</a>
+				
 			</div>
 		</div>
 		<div class="container col-sm-12 col-lg-4">

@@ -42,49 +42,48 @@
 				<div class="col-lg-8">
 					<div class="card">
 						<div class="card-header"><h5>Lista de Matrizes<h5></div>
+
 							<div class="card-body">
-								<div class="row">
-									<div class="form-group table-responsive">
-										<table id="tabela" class="table table-hover table-bordered" ng-app="matriz in matrizes">
-										  <thead class="text-center">
-										    <tr>
-										      <th scope="col">Código</th>
-										      <th scope="col">Raça</th>
-										      <th scope="col">Peso</th>
-													<th scope="col">Data Nascimento</th>
-													<th scope="col">Editar</th>
-													<th scope="col">Excluir</th>
-										    </tr>
-										  </thead>
-										  <tbody class="text-center">
-										    <tr ng-repeat="matriz in matrizes">
-										      <th scope="row" class="col-md-1">
-														{{matriz.codigo}}
-													</th>
-										      <td class="">{{matriz.raca}}</td>
-										      <td class="">{{matriz.peso}}</td>
-													<td class="">{{matriz.dataNascimento}}</td>
-										      <td class="">
-														<button class="btn btn-primary">
-									            <i class="fa fa-pencil" aria-hidden="true"></i>
-									          </button>
-													</td>
-													<td class="col-md-1">
-														<button class="btn btn-danger">
-									            <i class="fa fa-trash-o" aria-hidden="true"></i>
-									          </button>
-													</td>
-										    </tr>
-										  </tbody>
-										</table>
-									</div>
-								</div>
 								<div class="row">
 									<a class="btn btn-secondary ml-auto" href="cadastro-matriz.html">
 										<i class="fa fa-plus" aria-hidden="true"></i>
 											Cadastrar
 									</a>
 								</div>
+
+								<div class="row">
+									<div class="form-group table-responsive">
+										<table id="tabela" class="table table-hover" ng-app="matriz in matrizes">
+										  <thead class="text-center">
+										    <tr>
+										      	<th scope="col">Código</th>
+										      	<th scope="col">Estagio</th>	
+												<th scope="col">Editar</th>
+												<th scope="col">Excluir</th>
+										    </tr>
+										  </thead>
+										  <tbody class="text-center">
+										    <tr ng-repeat="matriz in matrizes">
+										      <th scope="row" class="col-md-1">
+														{{matriz.identificador}}
+													</th>
+										      	<td class="">{{matriz.estagio}}</td>
+										      	<td class="">
+													<button class="btn btn-primary">
+									            		<i class="fa fa-pencil" aria-hidden="true"></i>
+									         		</button>
+												</td>
+												<td class="col-md-1">
+													<button class="btn btn-danger">
+									            		<i class="fa fa-trash-o" aria-hidden="true"></i>
+									          		</button>
+												</td>
+										    </tr>
+										  </tbody>
+										</table>
+									</div>
+								</div>
+								
 							</div>
 
 						</div>

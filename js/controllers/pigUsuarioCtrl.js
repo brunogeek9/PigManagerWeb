@@ -1,4 +1,4 @@
-angular.module("pigJs").controller("pigUsuarioCtrl", function ($scope,$http) {
+angular.module("pigJs").controller("pigUsuarioCtrl", function ($scope,$http,$location) {
 	$scope.app = "Pig web control";
 	$scope.txMatriz = "Gerencia de Usuarios";
 	$scope.usuarios = [];
@@ -9,8 +9,7 @@ angular.module("pigJs").controller("pigUsuarioCtrl", function ($scope,$http) {
 	};
 
 	$scope.cadUsuario = function (usuario) {
-		//delete $scope.matriz;
-		//$http.post("http://localhost:8080/PigManager/usuario",usuario);
+	
 		$http({
 			url: "http://localhost:8080/PigManager/usuario",
 			method: "POST",
@@ -20,10 +19,12 @@ angular.module("pigJs").controller("pigUsuarioCtrl", function ($scope,$http) {
 		.then(function(response) {
 			console.log(response.data);
 		}, 
-		function(response) { // optional
+		function(response) { 
 			//console.log(response.data);
 		});
+		$location.path('view/listar-usuario.html');
 
 	};
 	carregaUsuarios();
+
 });

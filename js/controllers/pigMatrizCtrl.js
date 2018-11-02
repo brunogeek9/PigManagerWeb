@@ -1,9 +1,7 @@
 angular.module("pigJs").controller("pigMatrizCtrl", function ($scope,$http) {
 			$scope.app = "Pig web control";
 			$scope.txMatriz = "Gerencia de matrizes";
-			//carregarMatrizes();
-			//	
-			//];
+			
 			$scope.matrizes = [];
 			
 			$scope.estagios = ['COBERTA', 'PRENHES', 'LACTACAO', 'VAZIA'];
@@ -17,7 +15,6 @@ angular.module("pigJs").controller("pigMatrizCtrl", function ($scope,$http) {
 			$scope.cadMatriz = function (matriz) {
 				matriz.arquivo = "foto";
 				$scope.matrizes.push(angular.copy(matriz));
-				$scope.matrizForm.$setPristine();
 				$http({
 			        url: "http://localhost:8080/PigManager/matriz",
 			        method: "POST",
@@ -27,11 +24,30 @@ angular.module("pigJs").controller("pigMatrizCtrl", function ($scope,$http) {
 			    .then(function(response) {
 			        console.log(response.data);
 			    }, 
-			    function(response) { // optional
+			    function(response) { 
 			        console.log(response.data);
 			    });
+			    delete $scope.matriz;
+			    $scope.matrizForm.setPristine();
 			};
 			
 			carregarMatrizes();
 			
+			$scope.deletaMatriz = function (matriz) {
+				$http({
+			        url: "http://localhost:8080/PigManager/matriz/"+matriz.id,
+			        method: "DELETE",
+			        headers: {'Access-Control-Allow-Origin': '*'}
+			    })
+			    .then(function(response) {
+			        console.log(response);
+			    }, 
+			    function(response) { 
+			        console.log("deu certo não");
+			    });
+			};
+
+			
+
+
 		});

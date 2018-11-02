@@ -47,7 +47,7 @@
 							<div class="col-lg-7 col-md-12 form-group">
 								<label for="estagio-matriz">Estágio</label>
 								<select id="estagio-matriz" class="form-control" ng-model="matriz.estagio"
-								ng-options="estagio for estagio in estagios" >
+								ng-options="(estagio | lowercase) for estagio in estagios" >
 									<option value="">Selecione um estagio</option>
 								</select>
 							</div>

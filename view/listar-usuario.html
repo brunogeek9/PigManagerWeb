@@ -29,6 +29,21 @@
 			$http.get("http://localhost:8080/PigManager/usuario").then(function (response) {
 				$scope.usuarios = response.data;
 			});
+
+			$scope.deletaUsuario = function (usuario) {
+				$http({
+			        url: "http://localhost:8080/PigManager/matriz/"+usuario.id,
+			        method: "DELETE",
+			        headers: {'Access-Control-Allow-Origin': '*'}
+			    })
+			    .then(function(response) {
+			        console.log(response);
+			    }, 
+			    function(response) { 
+			        console.log("deu certo não");
+			    });
+			};
+
 		});
 	</script>
 </head>
@@ -71,7 +86,7 @@
 									</button>
 								</td>
 								<td>
-									<button class="btn btn-danger">
+									<button class="btn btn-danger" ng-click="deletaUsuario(usuario)">
 										<i class="fa fa-trash-o" aria-hidden="true"></i>
 									</button>
 								</td>

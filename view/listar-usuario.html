@@ -60,7 +60,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr ng-repeat="usuario in usuarios">
+						<tr ng-repeat="usuario in usuarios | orderBy:'nome'">
 							<div class="row">
 								<td class="col-lg-7">
 									<a class="nav-link text-dark" href="#">{{usuario.nome}}</a>

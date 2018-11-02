@@ -15,11 +15,11 @@
                     </tr>
                   </thead>
                   <tbody class="text-center">
-                    <tr ng-repeat="matriz in matrizes">
+                    <tr ng-repeat="matriz in matrizes | orderBy:'estagio'">
                       <th scope="row" class="col-md-1">
                         {{matriz.identificador}}
                       </th>
-                        <td class="">{{matriz.estagio}}</td>
+                        <td class="">{{matriz.estagio | lowercase}}</td>
                         <td class="">
                           <button class="btn btn-sm btn-primary">
                                   <i class="fa fa-pencil" aria-hidden="true"></i>

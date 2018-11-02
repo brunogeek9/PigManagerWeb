@@ -1,4 +1,82 @@
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+ul, ol, li{
+	list-style: none;
+}
+
+body,html{
+
+	height: 100%;
+	width: 100%;
+	font-family: sans-serif;
+}
+
 .bg-blublu{
 	background: #00224e;
 }
 
+.siderbar{
+	position: absolute;
+	width: 100%;
+	background-color: #666;
+	height: 100vh;
+}
+
+.siderbar ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.siderbar ul li{
+	padding: 15px 10px;
+	border-bottom: 1px solid #333;
+}
+
+.siderbar ul li a{
+	color: #fff;
+	text-decoration: none;
+}
+
+.siderbar ul li i {
+	color: #333;
+}
+.sidebar li a{
+	display: block;
+	padding: 8px;
+	border-left: 4px solid #444;
+
+}
+@media screen and (min-width: 600px) {
+	.siderbar{
+		width: 80px;
+	}
+	.siderbar ul li{
+		text-align: center;
+	}
+	.siderbar ul li span:nth-child(2){
+		display: none;
+	}
+	.siderbar ul li i{
+		font-size: 26px;
+	}
+}
+
+@media screen and (min-width: 1000px) {
+	.siderbar{
+		width: 200px;
+	}
+	.siderbar ul li{
+		text-align: left;
+	}
+	.siderbar ul li span:nth-child(2){
+		display: inline;
+	}
+	.siderbar ul li i{
+		font-size: 14px;
+	}
+}

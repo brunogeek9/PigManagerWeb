@@ -20,42 +20,45 @@
 
 <div class="container mt-3" ng-controller="pigMatrizCtrl">
 	<div class="row">
-		<div class="col-md-8">
+		<div class="col-md-6">
 			<div class="card">
 				<div class="card-header">Cadastrar Matriz</div>
 				<div class="card-body">
 					<form name="matrizForm">
 						<div class="row">
-							<div class="col-lg-3 col-md-6 form-group ">
+							<div class="col-sm-6 col-md-12 col-lg-5 form-group ">
 								<label for="codigo-matriz">Código</label>
 								<input type="text" class="form-control" id="codigo-matriz" placeholder="Digite o código" ng-model="matriz.identificador" ng-required="true" name="codigo">
 							</div>
-							<div class="col-lg-5 col-md-6 form-group ">
+							<div class="col-sm-6 col-md-12 col-lg-7 form-group ">
 								<label for="raca-matriz">Raça</label>
 								<input type="text" class="form-control" id="raca-matriz" placeholder="Digite a raça"
 								ng-model="matriz.raca">
 							</div>
-							<div class="col-lg-4 col-md-12 form-group ">
+
+
+						</div>
+						<div class="row">
+							<div class="col-sm-12 col-md-12 col-lg-5 form-group ">
 								<label for="data-matriz">Data Nascimento</label>
 								<input type="date" class="form-control" id="data-matriz"
 								ng-model="matriz.dataNascimento">
 							</div>
-
-						</div>
-						<div class="row">
-							<div class="col-lg-4 col-md-6 form-group">
+							<div class="col-lg-7 col-md-12 form-group">
 								<label for="estagio-matriz">Estágio</label>
 								<select id="estagio-matriz" class="form-control" ng-model="matriz.estagio"
 								ng-options="estagio for estagio in estagios" >
 									<option value="">Selecione um estagio</option>
 								</select>
 							</div>
-							<div class="col-lg-3 col-md-6 form-group">
+						</div>
+						<div class="row">
+							<div class="col-lg-5 col-md-12 form-group">
 								<label for="peso-matriz">Peso</label>
 								<input type="text" class="form-control" id="peso-matriz" placeholder="Digite o peso"
 								ng-model="matriz.peso">
 							</div>
-							<div class="col-lg-5 col-md-12 form-group">
+							<div class="col-lg-7 col-md-12 form-group">
 								<label for="historico-matriz">Histórico</label>
 								<input type="file" class="form-control-file" id="historico-matriz" ng-model="matriz.arquivo">
 							</div>
@@ -77,12 +80,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-4">
-			<div class="card">
-				<div class="card-body">
-					<h1>Notificações</h1>
-				</div>
-			</div>
+		<div class="col-md-6">
+			<div ng-include="'lista-matriz.html'"></div>
 		</div>
 	</div>
 </div>
@@ -90,6 +89,5 @@
 <script src="../lib/jquery/dist/jquery.js"></script>
 <script src="../lib/popper/dist/popper.js"></script>
 <script src="../lib/bootstrap/dist/js/bootstrap.js"></script>
-
 </body>
 </html>

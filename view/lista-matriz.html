@@ -26,7 +26,7 @@
                           </button>
                         </td>
                     <td class="col-md-1">
-                      <button class="btn btn-sm btn-danger" ng-click="deletaMatriz(matriz)">
+                      <button class="btn btn-sm btn-danger" data-toggle="modal" data-target="#modal-excluir">
                         <i class="fa fa-trash-o" aria-hidden="true">
                           <a href=""></a>
                         </i>
@@ -105,6 +105,26 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-success">Salvar</button>
           <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal-excluir" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Excluir Matriz</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Cancelar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Deseja excluir essa matriz?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" ng-click="deletaMatriz(matriz)">Sim</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
         </div>
       </div>
     </div>

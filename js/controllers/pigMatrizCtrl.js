@@ -6,21 +6,18 @@ angular.module("pigJs").controller("pigMatrizCtrl", function ($scope,$http) {
 			//];
 			$scope.matrizes = [];
 			
-			$scope.estagios = ['Coberta', 'Prenhes', 'Lactação', 'Vazia'];
+			$scope.estagios = ['COBERTA', 'PRENHES', 'LACTACAO', 'VAZIA'];
 			
+			var carregarMatrizes = function () {
+				$http.get("http://localhost:8080/PigManager/matriz").then(function (response) {
+					$scope.matrizes = response.data;
+				});
+			};
+
 			$scope.cadMatriz = function (matriz) {
-				/*matriz.arquivo = "foto";
-				matriz.dataNascimento = '2018-01-01';
-				matriz.identificador = "2222";
-				matriz.raca = "essa fera";
-				matriz.peso = 150;
-				matriz.estagio = "GRAVIDA";*/
-				
+				matriz.arquivo = "foto";
 				$scope.matrizes.push(angular.copy(matriz));
 				$scope.matrizForm.$setPristine();
-				
-				console.log(matriz);
-				
 				$http({
 			        url: "http://localhost:8080/PigManager/matriz",
 			        method: "POST",
@@ -33,14 +30,6 @@ angular.module("pigJs").controller("pigMatrizCtrl", function ($scope,$http) {
 			    function(response) { // optional
 			        console.log(response.data);
 			    });
-			};
-
-			
-
-			var carregarMatrizes = function () {
-				$http.get("http://localhost:8080/PigManager/matriz").then(function (response) {
-					$scope.matrizes = response.data;
-				});
 			};
 			
 			carregarMatrizes();

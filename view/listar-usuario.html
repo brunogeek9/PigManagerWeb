@@ -26,21 +26,28 @@
 	<script type="text/javascript">
 		angular.module("listarUsuario",[]);
 		angular.module("listarUsuario").controller("listarUsuarioCtl",function($scope,$http){
-			$http.get("http://localhost:8080/PigManager/usuario").then(function (response) {
-				$scope.usuarios = response.data;
-			});
+			var carregaUsuarios = function () {
+				$http.get("http://localhost:8080/PigManager/usuario").then(function (response) {
+					$scope.usuarios = response.data;
+				});
+				console.log($scope.usuarios);
+			};
+
+
+			carregaUsuarios();
 
 			$scope.deletaUsuario = function (usuario) {
 				$http({
-			        url: "http://localhost:8080/PigManager/matriz/"+usuario.id,
-			        method: "DELETE",
+			        url: 'http://localhost:8080/PigManager/usuario/'+usuario.id,
+			        method: 'DELETE',
 			        headers: {'Access-Control-Allow-Origin': '*'}
 			    })
 			    .then(function(response) {
 			        console.log(response);
+			        carregaUsuarios();
 			    }, 
 			    function(response) { 
-			        console.log("deu certo não");
+			        console.log(response);
 			    });
 			};
 

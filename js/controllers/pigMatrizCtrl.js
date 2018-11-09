@@ -16,6 +16,7 @@ angular.module("pigJs").controller("pigMatrizCtrl", function ($scope,$http) {
 				matriz.arquivo = "foto";
 				$scope.matrizes.push(angular.copy(matriz));
 				$http({
+
 			        url: "http://localhost:8080/PigManager/matriz",
 			        method: "POST",
 			        headers: {'Access-Control-Allow-Origin': '*'},
@@ -35,7 +36,7 @@ angular.module("pigJs").controller("pigMatrizCtrl", function ($scope,$http) {
 			
 			$scope.deletaMatriz = function (matriz) {
 				$http({
-			        url: "http://localhost:8080/PigManager/matriz/"+matriz.id,
+			        url: "http://localhost:8080/PigManager/matriz/"+matriz.identificador,
 			        method: "DELETE",
 			        headers: {'Access-Control-Allow-Origin': '*'}
 			    })

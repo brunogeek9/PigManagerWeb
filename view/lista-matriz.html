@@ -1,4 +1,4 @@
-  <div class="row">
+f  <div class="row">
     <div class="col-lg-12">
       <div class="card">
         <div class="card-header">Lista de Matrizes</div>
@@ -16,8 +16,8 @@
                   </thead>
                   <tbody class="text-center">
                     <tr ng-repeat="matriz in matrizes | orderBy:'estagio'">
-                      <th scope="row" class="col-md-1">
-                        {{matriz.identificador}}
+                      <th scope="row" class="col-md-1" ng-model="matriz.identificador">
+                        {{matriz.identificador}} 
                       </th>
                         <td class="">{{matriz.estagio | lowercase}}</td>
                         <td class="">
@@ -121,9 +121,10 @@
         </div>
         <div class="modal-body">
           <p>Deseja excluir essa matriz?</p>
+          <p>{{matriz}} fsfs</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary" ng-click="deletaMatriz(matriz)">Sim</button>
+          <button class="btn btn-primary" ng-click="deletaMatriz(matriz)">Sim</button>
           <button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
         </div>
       </div>
